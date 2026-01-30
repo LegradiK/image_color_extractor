@@ -1,6 +1,9 @@
-*venv/
+venv/*
 __pycache__/
-*.pyc
+.pyc
 instance/
 .pytest_cache/
-*.env
+.env*
+package-lock.json*
+node_modules/*
+package.json*
