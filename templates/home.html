@@ -3,10 +3,19 @@
 {% block content %}
 <div class="container main-box">
     <div class="left-box">
-        <p class="welcome-text">Welcome to the Image Color Extractor!</p>
         <form action="" method="post" enctype="multipart/form-data" class="upload-image-form">
             <div class="mb-3">
                 <input class="form-control" type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            <div class="row g-2 mb-3">
+                <div class="col-md">
+                    <label for="num_colors" class="form-label">Number of Colors:</label>
+                    <input type="number" id="num_colors" name="num_colors" class="form-control" value="5" min="1" max="20" required>
+                </div>
+                <div class="col-md">
+                    <label for="delta_colors" class="form-label">Color Difference (Delta):</label>
+                    <input type="number" id="delta_colors" name="delta_colors" class="form-control" min="1" max="255" required>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Upload Image</button>
         </form>
