@@ -1,13 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container main-box">
+    <div class="left-box">
+        <p class="welcome-text">Welcome to the Image Color Extractor!</p>
+        <form action="" method="post" enctype="multipart/form-data" class="upload-image-form">
+            <div class="mb-3">
+                <input class="form-control" type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Image</button>
+        </form>
+        <div class="uploaded-image">
+            {% if image_url %}
+                <img src="{{ image_url }}" alt="Uploaded Image" class="img-fluid">
+            {% else %}
+                <p>An image will be displayed here.</p>
+            {% endif %}
+        </div>
+    </div>
 
-<div class="container span6">
-
-</div>
-
-<div class="container span6">
-
+    <div class="right-box">
+        <h4>Result</h4>
+        {% if colors %}
+            <div class="result-box">
+                <ul>
+                    {% for color in colors %}
+                        <li>{{ color }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <div class="result-box">
+                <p>Result will appear here after uploading an image.</p>
+            </div>
+        {% endif %}
+    </div>
 </div>
 
 
