@@ -45,11 +45,17 @@ def home():
             colors = image.getdata()
             print(colors)
 
-    return render_template(
-        "home.html",
-        image_url=image_url,
-        colors=colors
-    )
+        return render_template(
+            "home.html",
+            image_url=image_url,
+            colors=colors
+        )
+    
+    else:
+
+        return render_template("home.html")
+
+
 
 
 if __name__ == '__main__':

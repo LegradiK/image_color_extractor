@@ -19,12 +19,14 @@
             </div>
             <button type="submit" class="btn btn-primary">Upload Image</button>
         </form>
-        <div class="uploaded-image">
-            {% if image_url %}
-                <img src="{{ image_url }}" alt="Uploaded Image" class="img-fluid">
-            {% else %}
-                <p>An image will be displayed here.</p>
-            {% endif %}
+        <div class="image-space">
+            <div class="uploaded-image">
+                {% if image_url %}
+                    <img src="{{ image_url }}" alt="Uploaded Image" class="img-fluid">
+                {% else %}
+                    <p>An image will be displayed here.</p>
+                {% endif %}
+            </div>
         </div>
     </div>
 
