@@ -10,10 +10,10 @@
             <div class="row g-2 mb-3">
                 <div class="col-md">
                     <label for="num_colors" class="form-label">Number of Colors:</label>
-                    <input type="number" id="num_colors" name="num_colors" class="form-control" value="5" min="1" max="20" required>
+                    <input type="number" id="num_colors" name="num_colors" class="form-control" value="5" min="1" max="25" required>
                 </div>
                 <div class="col-md">
-                    <label for="delta_colors" class="form-label">Color Difference (Delta):</label>
+                    <label for="delta_colors" class="form-label">Color Difference (Delta 0-100):</label>
                     <input type="number" id="delta_colors" name="delta_colors" class="form-control" min="1" max="255" required>
                 </div>
             </div>
@@ -35,8 +35,15 @@
         {% if colors %}
             <div class="result-box">
                 <ul>
-                    {% for color in colors %}
-                        <li>{{ color }}</li>
+                    {% for color in top_colors %}
+                    <li style="display: flex; align-items: center; gap: 15px;">
+                        <!-- Color box -->
+                        <span 
+                        style="display: inline-block; width: 60px; height: 20px; border: 1px solid #fff;
+                        background-color: rgb{{ color }};"></span>
+                        <!-- Color text -->
+                        {{ color }}
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
