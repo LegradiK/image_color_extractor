@@ -8,7 +8,7 @@ import math
 app = Flask(__name__)
 
 UPLOAD_FOLDER = "static/uploads"
-ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
+ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif", "webp"}
 base_width = 600
 
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -59,10 +59,9 @@ def home():
             )
 
             colors = image.getdata()
-            color_counts = Counter(colors)
             # Apply delta filter
-            distinct_colors = filter_colors(color_counts, delta)
-            ##### start from here ######
+            distinct_colors = filter_colors(colors, delta)
+            color_counts = Counter(distinct_colors)
             top_colors = color_counts.most_common(top_x)
             for i in top_colors:
                 top_colors_list.append(i[0])
