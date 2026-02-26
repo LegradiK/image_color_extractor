@@ -15,11 +15,17 @@ A simple web application built with Flask that allows users to upload an image a
 
 ## Tech Stack
 
-Python 3
-Flask
-Pillow (PIL)
-Werkzeug
-HTML (Jinja templates)
+
+**Backend / Language**  
+- Python 3  
+- Flask  
+- Pillow (PIL)  
+- Werkzeug  
+
+**Frontend / UI**  
+- HTML (Jinja templates)  
+- Bootstrap 5 (CSS framework for responsive design and styling)  
+- Bootstrap Icons (for info icons and other UI elements) 
 
 ## Project Structure
 
