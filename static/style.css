@@ -73,6 +73,23 @@ p {
     font-weight: bold;
 }
 
+.info-icon {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-left: 5px;
+    font-size: 1rem;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #467356;
+}
+
+.tooltip-inner {
+    white-space: pre-line;   /* preserves line breaks */
+    max-width: 250px;        /* optional: limit width */
+    text-align: left;        /* optional: nicer alignment */
+}
+
 .image-space{
     width: 31vw;
     height: 50vh;
@@ -106,6 +123,30 @@ p {
     flex: 1;
     margin-top: 15px;
     margin-bottom: 10px;
+}
+
+/* Remove default padding for ol */
+.custom-ol {
+    padding-left: 30px; /* space for numbers */
+    counter-reset: my-counter; /* reset numbering */
+    list-style: none;  
+}
+
+/* Style numbers and li spacing */
+.custom-ol li {
+    counter-increment: my-counter;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 6px;                /* space between number and color box */
+}
+
+.custom-ol li::before {
+    content: counter(my-counter) "."; /* show the number */
+    font-weight: bold;
+    width: 20px;     /* space for number */
+    text-align: right;
+    margin-right: 10px;
 }
 
 /* FOOTER */

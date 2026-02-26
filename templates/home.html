@@ -9,11 +9,19 @@
             </div>
             <div class="row g-2 mb-3">
                 <div class="col-md">
-                    <label for="num_colors" class="form-label">Number of Colors (1-25):</label>
+                    <label for="num_colors" class="form-label">Number of Colors (1-25):
+                        <i class="bi bi-info-circle info-icon" data-bs-toggle="tooltip" title="How many dominant colors to extract from your picture"></i>
+                    </label>
                     <input type="number" id="num_colors" name="num_colors" class="form-control" value="5" min="1" max="25" required>
                 </div>
                 <div class="col-md">
-                    <label for="delta_colors" class="form-label">Color Difference (Delta 1-100):</label>
+                    <label for="delta_colors" class="form-label">Color Difference (Delta 1-100):    
+                        <i class="bi bi-info-circle info-icon" data-bs-toggle="tooltip" 
+                        title="How strictly similar colors are grouped.
+                        Example:
+                        5 → Only almost identical colors are grouped.
+                        50 → Similar shades are grouped together."></i>
+                    </label>
                     <input type="number" id="delta_colors" name="delta_colors" class="form-control" min="1" max="255" required>
                 </div>
             </div>
@@ -32,26 +40,26 @@
 
     <div class="right-box">
         <h4>Result</h4>
-        <p class="explanation_text">
-            These are the most dominant colors in your image, filtered by your selected similarity (delta) setting.
-        </p>
-        <p class="user_choices">
-            Your chosen number of colors:{{ num_colors }}, delta {{ delta }} :
-        </p>
         {% if colors %}
+            <p class="explanation_text">
+                These are the most dominant colors in your image, filtered by your selected similarity (delta) setting.
+            </p>
+            <p class="user_choices">
+                Your chosen number of colors: <strong>{{ num_colors }}</strong>, delta <strong>{{ delta }}</strong> :
+            </p>
             <div class="result-box">
-                <ul>
+                <ol class="custom-ol">
                     {% for color in top_colors %}
-                    <li style="display: flex; align-items: center; gap: 15px;">
-                        <!-- Color box -->
-                        <span 
-                        style="display: inline-block; width: 60px; height: 20px; border: 1px solid #fff;
-                        background-color: rgb{{ color }};"></span>
-                        <!-- Color text -->
-                        {{ color }}
-                    </li>
+                        <li style="align-items: center; gap: 15px;">
+                            <!-- Color box -->
+                            <span 
+                            style="display: inline-block; width: 60px; height: 20px; border: 1px solid #fff;
+                            background-color: rgb{{ color }};"></span>
+                            <!-- Color text -->
+                            {{ color }}
+                        </li>
                     {% endfor %}
-                </ul>
+                </ol>
             </div>
         {% else %}
             <div class="result-box">

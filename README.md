@@ -26,11 +26,17 @@ HTML (Jinja templates)
 ```bash
 project/
 │
-├── app.py
+├── main.py
+├── .gitignore
+├── LICENSE
 ├── static/
-│   └── uploads/
+│   └── uploads/SAVE_YOUR_PICS_HERE
+│   └── style.css
 ├── templates/
 │   └── home.html
+│   └── base.html 
+│   └── header.html
+│   └── footer.html
 └── README.md
 ```
 
