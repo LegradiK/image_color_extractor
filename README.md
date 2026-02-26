@@ -90,4 +90,6 @@ Open the URL in your browser
 ```
 png, jpg, jpeg, gif, webp
 ```
+## Attribution
 
+Icon used in this project are by [Freepik - Flaticon](https://www.flaticon.com/free-icons/info)
