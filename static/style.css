@@ -28,6 +28,10 @@ a:hover {
     cursor:pointer;  
 }
 
+p {
+    margin: 0;
+}
+
 /* HEADER */
 .header-container {
     display:center;
@@ -100,7 +104,8 @@ a:hover {
 /* RESULT */
 .result-box {
     flex: 1;
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 /* FOOTER */

@@ -70,7 +70,9 @@ def home():
             "home.html",
             image_url=image_url,
             colors=colors,
-            top_colors=top_colors_list
+            top_colors=top_colors_list,
+            num_colors=top_x,
+            delta=delta
         )
     
     else:

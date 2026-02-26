@@ -33,7 +33,10 @@
     <div class="right-box">
         <h4>Result</h4>
         <p class="explanation_text">
-            These are the most dominant colors in your image, filtered by your selected similarity (delta) setting :
+            These are the most dominant colors in your image, filtered by your selected similarity (delta) setting.
+        </p>
+        <p class="user_choices">
+            Your chosen number of colors:{{ num_colors }}, delta {{ delta }} :
         </p>
         {% if colors %}
             <div class="result-box">
